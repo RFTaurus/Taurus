@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Taurus Tab Videos Component</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+    /* border: solid 1px red */
+}
+
+/* Set height of body and the document to 100% */
+body, html {
+    background-color: #f5f7fb;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+</style>
+</head>
+<body>
+
+    <div>
+        <style scoped>
+            @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+            .card{
+                background-color: #f5f7fb;
+                border-radius: 20px;
+                margin: 0% auto;
+                width: 100%;
+                padding: 20px;
+                display: flex;
+                align-items: center;
+            }
+
+            .table-icon-img-size{
+                width: 15px;
+                height: 15px;
+            }
+    
+            /* Style tab links */
+            .tablink:nth-child(1) {
+            background-color: rgba(29, 57, 98, 0.05);
+            border-radius: 55px;
+            color: #7E94B3;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.4em;
+            width: 128px;
+            height: 40px;
+            }
+    
+            .tablink:nth-child(2), .tablink:nth-child(3) {
+            background-color: rgba(29, 57, 98, 0.05);
+            border-radius: 55px;
+            color: #7E94B3;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.4em;
+            width: 128px;
+            height: 40px;
+            }
+    
+            .tablink:hover {
+            background-color: #3b73c5;
+            color: #ffffff;
+            }
+    
+            /* Style the tab content (and add height:100% for full page content) */
+            .tabcontent {
+            color: #ffffff;
+            display: none;
+            padding: 100px 20px;
+            }
+    
+            .tab-title{
+                font-size: 0.9em;
+            }
+            /* 
+                ===================================================================
+                Util
+                ===================================================================
+            */
+            .row {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+            .col {
+                display: flex;
+                flex-direction: column;
+                flex-basis: 100%;
+                flex: 1;
+                margin: 24px 40px;
+            }
+
+            /* 
+                ===================================================================
+                Video
+                ===================================================================
+            */
+            #pahami-table-1, #pahami-table-2, #pahami-table-3 {
+                background-color: #f5f7fb;
+                border-radius: 20px;
+                padding: 5%;
+                font-size: 20px;
+                font-family: 'Nunito', sans-serif;
+                color: #1d3962;
+                margin: 4% auto;
+                width: 100%;
+                height: auto;
+                align-items: center;
+                border-top: none;
+            }
+    
+            #pahami-table-1 .video-embedded, 
+            #pahami-table-2 .video-embedded, 
+            #pahami-table-3 .video-embedded{
+                width: 100%;
+                height: 200%;
+                border-radius: 8px;
+            }
+           
+            #pahami-table-1 .v-title,
+            #pahami-table-2 .v-title,
+            #pahami-table-3 .v-title{
+                font-family: 'Nunito', sans-serif;
+                text-align: left;
+                font-size: 1.2em;
+                line-height: 1em;
+                font-weight: bold;
+                color: #3b73c5;
+            }
+    
+            #pahami-table-1 .v-sub-title,
+            #pahami-table-2 .v-sub-title,
+            #pahami-table-3 .v-sub-title{
+                font-family: 'Nunito', sans-serif;
+                text-align: left;
+                font-size: 1.4em;
+                line-height: 1.6em;
+                font-weight: bold;
+                color: #1D3962;
+                padding-top: 8px;
+                padding-bottom: 16px;
+            }
+
+            #pahami-table-1 .v-description,
+            #pahami-table-2 .v-description,
+            #pahami-table-3 .v-description{
+                font-family: 'Nunito', sans-serif;
+                text-align: left;
+                font-size: 1em;
+                line-height: 1.8em;
+                font-weight: normal;
+                color: #1D3962;
+            }
+
+            /* 
+                ===================================================================
+                Responsiveness
+                ===================================================================
+            */
+            @media screen and (max-width: 1024px){
+
+                /* 
+                    ===================================================================
+                    Util
+                    ===================================================================
+                */
+                .row {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    width: 100%;
+                }
+
+                .col {
+                    display: flex;
+                    flex-direction: column;
+                    flex-basis: 100%;
+                    flex: 100%;
+                    margin: 24px 40px;
+                }
+
+                /* 
+                    ===================================================================
+                    Video
+                    ===================================================================
+                */
+                #pahami-table-1, #pahami-table-2, #pahami-table-3 {
+                    background-color: #f5f7fb;
+                    border-radius: 20px;
+                    padding: 4%;
+                    font-size: 20px;
+                    font-family: 'Nunito', sans-serif;
+                    color: #1d3962;
+                    margin: 4% auto;
+                    width: 100%;
+                    height: auto;
+                    align-items: center;
+                    border-top: none;
+                }
+        
+                #pahami-table-1 .video-embedded, 
+                #pahami-table-2 .video-embedded, 
+                #pahami-table-3 .video-embedded{
+                    width: 100%;
+                    height: 250px;
+                    border-radius: 8px;
+                }
+            
+                #pahami-table-1 .v-title,
+                #pahami-table-2 .v-title,
+                #pahami-table-3 .v-title{
+                    font-family: 'Nunito', sans-serif;
+                    text-align: left;
+                    font-size: 1em;
+                    line-height: 1em;
+                    font-weight: bold;
+                    color: #3b73c5;
+                }
+        
+                #pahami-table-1 .v-sub-title,
+                #pahami-table-2 .v-sub-title,
+                #pahami-table-3 .v-sub-title{
+                    font-family: 'Nunito', sans-serif;
+                    text-align: left;
+                    font-size: 1.2em;
+                    line-height: 1.6em;
+                    font-weight: bold;
+                    color: #1D3962;
+                    padding-top: 8px;
+                    padding-bottom: 16px;
+                }
+
+                #pahami-table-1 .v-description,
+                #pahami-table-2 .v-description,
+                #pahami-table-3 .v-description{
+                    font-family: 'Nunito', sans-serif;
+                    text-align: left;
+                    font-size: 0.9em;
+                    line-height: 1.8em;
+                    font-weight: normal;
+                    color: #1D3962;
+                }
+            }
+    
+            @media screen and (max-width: 767px){
+                /* Style tab links */
+                .tablink:nth-child(1) {
+                    font-size: 1em;
+                    width: calc(128px - 32px);
+                }
+        
+                .tablink:nth-child(2), .tablink:nth-child(3) {
+                    font-size: 1em;
+                    width: calc(128px - 32px);
+                }
+
+                /* 
+                    ===================================================================
+                    Util
+                    ===================================================================
+                */
+                .row {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    width: 100%;
+                }
+
+                .col {
+                    display: flex;
+                    flex-direction: column;
+                    flex-basis: 100%;
+                    flex: 100%;
+                    margin: 24px 40px;
+                }
+
+                /* 
+                    ===================================================================
+                    Video
+                    ===================================================================
+                */
+                #pahami-table-1, #pahami-table-2, #pahami-table-3 {
+                    background-color: #f5f7fb;
+                    border-radius: 20px;
+                    padding: 2%;
+                    font-size: 20px;
+                    font-family: 'Nunito', sans-serif;
+                    color: #1d3962;
+                    margin: 2% auto;
+                    width: 100%;
+                    height: auto;
+                    align-items: center;
+                    border-top: none;
+                }
+        
+                #pahami-table-1 .video-embedded, 
+                #pahami-table-2 .video-embedded, 
+                #pahami-table-3 .video-embedded{
+                    width: 100%;
+                    height: 240px;
+                    border-radius: 8px;
+                }
+            
+                #pahami-table-1 .v-title,
+                #pahami-table-2 .v-title,
+                #pahami-table-3 .v-title{
+                    font-family: 'Nunito', sans-serif;
+                    text-align: left;
+                    font-size: 0.9em;
+                    line-height: 1em;
+                    font-weight: bold;
+                    color: #3b73c5;
+                }
+        
+                #pahami-table-1 .v-sub-title,
+                #pahami-table-2 .v-sub-title,
+                #pahami-table-3 .v-sub-title{
+                    font-family: 'Nunito', sans-serif;
+                    text-align: left;
+                    font-size: 1em;
+                    line-height: 1.6em;
+                    font-weight: bold;
+                    color: #1D3962;
+                    padding-top: 8px;
+                    padding-bottom: 16px;
+                }
+
+                #pahami-table-1 .v-description,
+                #pahami-table-2 .v-description,
+                #pahami-table-3 .v-description{
+                    display: none;
+                }
+            }
+        </style>
+    
+        <div style="padding-top: 30px;">
+            <div class="card">
+                <button class="tablink" onclick="openPage('pahami-table-1', this, '#3b73c5')" id="defaultOpen">
+                    <span class="tab-title">IPA</span>
+                </button>
+                <button class="tablink" onclick="openPage('pahami-table-2', this, '#3b73c5')">
+                    <span class="tab-title">IPS</span>
+                </button>
+                <button class="tablink" onclick="openPage('pahami-table-3', this, '#3b73c5')">
+                    <span class="tab-title">UTBK</span>
+                </button>
+            </div>
+        </div>
+    
+        <div id="pahami-table-1" class="tabcontent">
+            <div style="overflow-x: auto;">
+                <div class="row">
+                    <div class="col">
+                        <iframe class="video-embedded" src="https://www.youtube.com/embed/sSd0_FSLh1I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col">
+                        <span class="v-title">
+                            Kimia Kelas XII
+                        </span>
+                        <span class="v-sub-title">
+                            Redoks dan Sifat Elektrokimia - NOTASI SEL
+                        </span>
+
+                        <p class="v-description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis neque vero voluptatibus, facere voluptatem reprehenderit minus optio. Quisquam eius beatae, blanditiis molestias accusamus quaerat. Reiciendis impedit distinctio magnam accusantium at.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <iframe class="video-embedded" src="https://www.youtube.com/embed/Z5IJ4sakKFg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col">
+                        <span class="v-title">
+                            Biologi Kelas XII
+                        </span>
+                        <span class="v-sub-title">
+                            Pertumbuhan dan Perkembangan - TAHAP PASCA EMBRIO
+                        </span>
+
+                        <p class="v-description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis neque vero voluptatibus, facere voluptatem reprehenderit minus optio. Quisquam eius beatae, blanditiis molestias accusamus quaerat. Reiciendis impedit distinctio magnam accusantium at.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <iframe class="video-embedded" src="https://www.youtube.com/embed/zMsOU_Ib6cA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col">
+                        <span class="v-title">
+                            Fisika Kelas XII
+                        </span>
+                        <span class="v-sub-title">
+                            Sumber Energi - ENERGI TAK TERBARUAN: BATU BARA
+                        </span>
+
+                        <p class="v-description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis neque vero voluptatibus, facere voluptatem reprehenderit minus optio. Quisquam eius beatae, blanditiis molestias accusamus quaerat. Reiciendis impedit distinctio magnam accusantium at.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <iframe class="video-embedded" src="https://www.youtube.com/embed/Y4ViqQTjKKs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col">
+                        <span class="v-title">
+                            Matematika Dasar XI
+                        </span>
+                        <span class="v-sub-title">
+                            Analisis Turunan Pertama Fungsi - Nilai Maksimum atau Minimum dari Kurva Parabola
+                        </span>
+
+                        <p class="v-description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis neque vero voluptatibus, facere voluptatem reprehenderit minus optio. Quisquam eius beatae, blanditiis molestias accusamus quaerat. Reiciendis impedit distinctio magnam accusantium at.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    
+        <div id="pahami-table-2" class="tabcontent">
+            <div style="overflow-x: auto;">
+                <div class="row">
+                    <div class="col">
+                        <iframe class="video-embedded" src="https://www.youtube.com/embed/Y7KTrOUWHgY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col">
+                        <span class="v-title">
+                            Sejarah
+                        </span>
+                        <span class="v-sub-title">
+                            [Belum]
+                        </span>
+
+                        <p class="v-description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis neque vero voluptatibus, facere voluptatem reprehenderit minus optio. Quisquam eius beatae, blanditiis molestias accusamus quaerat. Reiciendis impedit distinctio magnam accusantium at.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <iframe class="video-embedded" src="https://www.youtube.com/embed/E-2wZRTD7Vo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col">
+                        <span class="v-title">
+                            Ekonomi Kelas XII
+                        </span>
+                        <span class="v-sub-title">
+                            Akuntansi sebagai Sistem Informasi - AKUNTANSI SEBAGAI SISTEM INFORMASI
+                        </span>
+
+                        <p class="v-description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis neque vero voluptatibus, facere voluptatem reprehenderit minus optio. Quisquam eius beatae, blanditiis molestias accusamus quaerat. Reiciendis impedit distinctio magnam accusantium at.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <iframe class="video-embedded" src="https://www.youtube.com/embed/QVFvRiwVvQo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col">
+                        <span class="v-title">
+                            Sosiologi Kelas XI
+                        </span>
+                        <span class="v-sub-title">
+                            Kelompok Sosial - APA ITU KELOMPOK SOSIAL?
+                        </span>
+
+                        <p class="v-description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis neque vero voluptatibus, facere voluptatem reprehenderit minus optio. Quisquam eius beatae, blanditiis molestias accusamus quaerat. Reiciendis impedit distinctio magnam accusantium at.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <iframe class="video-embedded" src="https://www.youtube.com/embed/No_TqrSXCgA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col">
+                        <span class="v-title">
+                            Geografi XII
+                        </span>
+                        <span class="v-sub-title">
+                            Indonesia, Poros Maritim Dunia - LETAK DAN BATAS WILAYAH INDONESIA
+                        </span>
+
+                        <p class="v-description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis neque vero voluptatibus, facere voluptatem reprehenderit minus optio. Quisquam eius beatae, blanditiis molestias accusamus quaerat. Reiciendis impedit distinctio magnam accusantium at.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    
+        <div id="pahami-table-3" class="tabcontent">
+            <div style="overflow-x: auto;">
+                <div class="row">
+                    <div class="col">
+                        <iframe class="video-embedded" src="https://www.youtube.com/embed/CstenPGxnls" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+
+                    <div class="col">
+                        <span class="v-title">
+                            Panduan UTBK
+                        </span>
+                        <span class="v-sub-title">
+                            [Belum]
+                        </span>
+
+                        <p class="v-description">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis neque vero voluptatibus, facere voluptatem reprehenderit minus optio. Quisquam eius beatae, blanditiis molestias accusamus quaerat. Reiciendis impedit distinctio magnam accusantium at.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Script -->
+    
+        <script>
+            function openPage(pageName,elmnt,color) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].style.backgroundColor = "";
+                    tablinks[i].style.color = "#7E94B3";
+                }
+                document.getElementById(pageName).style.display = "block";
+                    elmnt.style.backgroundColor = color;
+                    elmnt.style.color = "#ffffff";
+            }
+    
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
+    </div>
+
+</body>
+</html> 

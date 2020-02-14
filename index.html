@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tab for Pahamify Mobile Tab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+    box-sizing: border-box;
+    /* border: solid 1px red */
+}
+
+/* Set height of body and the document to 100% */
+body, html {
+    background-color: #f5f7fb;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;;
+}
+
+</style>
+</head>
+<body>
+
+    <div>
+        <style scoped>
+            @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+            .card{
+                background-color: #ffffff;
+                border-radius: 20px;
+                margin: 0% auto;
+                width: 100%;
+                padding: 20px;
+                display: flex;
+                align-items: center;
+            }
+
+            .table-icon-img-size{
+                width: 15px;
+                height: 15px;
+            }
+    
+            /* Style tab links */
+            .tablink:nth-child(1) {
+            background-color: rgba(29, 57, 98, 0.05);
+            border-radius: 55px;
+            color: #7E94B3;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.8em;
+            width: 88px;
+            height: 40px;
+            }
+    
+            .tablink:nth-child(2), .tablink:nth-child(3) {
+            background-color: rgba(29, 57, 98, 0.05);
+            border-radius: 55px;
+            color: #7E94B3;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.8em;
+            width: 88px;
+            height: 40px;
+            }
+    
+            .tablink:hover {
+            background-color: #3b73c5;
+            color: #ffffff;
+            }
+    
+            /* Style the tab content (and add height:100% for full page content) */
+            .tabcontent {
+            color: #ffffff;
+            display: none;
+            padding: 100px 20px;
+            }
+    
+            .tab-title{
+                font-size: 0.9em;
+            }
+    
+            /* 
+                ===================================================================
+                First Table
+                ===================================================================
+            */
+            #pahami-table-mobile-1 {
+                background-color: #ffffff;
+                border-radius: 20px;
+                margin: 20px auto;
+                padding: 5%;
+            }
+    
+            #pahami-table-mobile-1 .title{
+                color: #1D3962;
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.2em;
+                border-bottom: solid 3px rgba(58, 115, 197, 0.1);
+                padding-bottom: 17px;
+            }
+    
+            #pahami-table-mobile-1 table {
+                font-family: 'Nunito', sans-serif;
+                font-size: 0.8em;
+                color: #1d3962;
+                margin: 0% auto;
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 100%;
+                max-width: 1200px;
+                border: none;
+                border-top: none;
+            }
+    
+            #pahami-table-mobile-1 tr{
+                border-top: solid 3px rgba(58, 115, 197, 0.1) !important;
+            }
+    
+            #pahami-table-mobile-1 tr:nth-child(1){
+                border-top: none !important;
+            }
+    
+            #pahami-table-mobile-1 tr:nth-last-child(1){
+                border-bottom: none !important;
+            }
+    
+            #pahami-table-mobile-1 td:nth-of-type(1){
+                width: 50%;
+                margin-left: 16px;
+                text-align: center;
+            }
+    
+            #pahami-table-mobile-1 td:nth-of-type(2){
+                width: 50%;
+                margin-right: 16px;
+                text-align: center;
+            }
+    
+            #pahami-table-mobile-1 .first{
+                border-top: solid 3px rgba(58, 115, 197, 0.4) !important;
+                /* border-top-radius: 10px; */
+            }
+        
+            #pahami-table-mobile-1 tr th:nth-child(2){
+                font-weight: bold;
+                background-color: rgba(46, 207, 47, 0.1);
+                /* padding: 32px 38px; */
+            }
+    
+            #pahami-table-mobile-1 .border-data-up{
+                border-top-right-radius: 20px;
+                border-top-left-radius: 20px;
+            }
+    
+            #pahami-table-mobile-1 .border-data-down{
+                border-bottom-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+            }
+    
+            #pahami-table-mobile-1 tr td:nth-child(2){
+                background-color: rgba(46, 207, 47, 0.1);
+                padding: 32px 38px;
+            }
+    
+            #pahami-table-mobile-1 tr td{
+                padding: 32px 38px;
+            }
+    
+            #pahami-table-mobile-1 .title{
+                font-family: 'Nunito', sans-serif;
+                text-align: center;
+                font-size: 1em;
+                color: #1D3962;
+                padding-bottom: 10px;
+            }
+    
+            /* 
+                ===================================================================
+                Second Table
+                ===================================================================
+            */
+            #pahami-table-mobile-2 {
+                background-color: #ffffff;
+                border-radius: 20px;
+                margin: 20px auto;
+                padding: 5%;
+            }
+    
+            #pahami-table-mobile-2 .title{
+                color: #1D3962;
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.2em;
+                border-bottom: solid 3px rgba(58, 115, 197, 0.1);
+                padding-bottom: 17px;
+            }
+    
+            #pahami-table-mobile-2 table {
+                font-family: 'Nunito', sans-serif;
+                font-size: 0.8em;
+                color: #1d3962;
+                margin: 0% auto;
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 100%;
+                max-width: 1200px;
+                border: none;
+                border-top: none;
+            }
+    
+            #pahami-table-mobile-2 tr{
+                border-top: solid 3px rgba(58, 115, 197, 0.1) !important;
+            }
+    
+            #pahami-table-mobile-2 tr:nth-child(1){
+                border-top: none !important;
+            }
+    
+            #pahami-table-mobile-2 tr:nth-last-child(1){
+                border-bottom: none !important;
+            }
+    
+            #pahami-table-mobile-2 td:nth-of-type(1){
+                width: 50%;
+                margin-left: 16px;
+                text-align: center;
+            }
+    
+            #pahami-table-mobile-2 td:nth-of-type(2){
+                width: 50%;
+                margin-right: 16px;
+                text-align: center;
+            }
+    
+            #pahami-table-mobile-2 .first{
+                border-top: solid 3px rgba(58, 115, 197, 0.4) !important;
+                /* border-top-radius: 10px; */
+            }
+    
+            #pahami-table-mobile-2 tr th:nth-child(2){
+                font-weight: bold;
+                background-color: rgba(219, 206, 44, 0.1);
+                /* padding: 32px 38px; */
+            }
+    
+            #pahami-table-mobile-2 .border-data-up{
+                border-top-right-radius: 20px;
+                border-top-left-radius: 20px;
+            }
+    
+            #pahami-table-mobile-2 .border-data-down{
+                border-bottom-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+            }
+    
+            #pahami-table-mobile-2 tr td:nth-child(2){
+                background-color: rgba(219, 206, 44, 0.1);
+                padding: 32px 38px;
+            }
+    
+            #pahami-table-mobile-2 tr td{
+                padding: 32px 38px;
+            }
+    
+            #pahami-table-mobile-2 .title{
+                font-family: 'Nunito', sans-serif;
+                text-align: center;
+                font-size: 1em;
+                color: #1D3962;
+                padding-bottom: 10px;
+            }
+    
+            /* 
+                ===================================================================
+                Third Table
+                ===================================================================
+            */
+            #pahami-table-mobile-3 {
+                background-color: #ffffff;
+                border-radius: 20px;
+                margin: 20px auto;
+                padding: 5%;
+            }
+    
+            #pahami-table-mobile-3 .title{
+                color: #1D3962;
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.2em;
+                border-bottom: solid 3px rgba(58, 115, 197, 0.1);
+                padding-bottom: 17px;
+            }
+    
+            #pahami-table-mobile-3 table {
+                font-family: 'Nunito', sans-serif;
+                font-size: 0.8em;
+                color: #1d3962;
+                margin: 0% auto;
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 100%;
+                max-width: 1200px;
+                border: none;
+                border-top: none;
+            }
+    
+            #pahami-table-mobile-3 tr{
+                border-top: solid 3px rgba(58, 115, 197, 0.1) !important;
+            }
+    
+            #pahami-table-mobile-3 tr:nth-child(1){
+                border-top: none !important;
+            }
+    
+            #pahami-table-mobile-3 tr:nth-last-child(1){
+                border-bottom: none !important;
+            }
+    
+            #pahami-table-mobile-3 td:nth-of-type(1){
+                width: 50%;
+                margin-left: 16px;
+                text-align: center;
+            }
+    
+            #pahami-table-mobile-3 td:nth-of-type(2){
+                width: 50%;
+                margin-right: 16px;
+                text-align: center;
+                color: #E54C6E;
+            }
+    
+            #pahami-table-mobile-3 .first{
+                border-top: solid 3px rgba(58, 115, 197, 0.4) !important;
+                /* border-top-radius: 10px; */
+            }
+        
+            #pahami-table-mobile-3 tr th:nth-child(2){
+                font-weight: bold;
+                background-color: rgba(229, 76, 110, 0.1);
+                /* padding: 32px 38px; */
+            }
+    
+            #pahami-table-mobile-3 .border-data-up{
+                border-top-right-radius: 20px;
+                border-top-left-radius: 20px;
+            }
+    
+            #pahami-table-mobile-3 .border-data-down{
+                border-bottom-right-radius: 20px;
+                border-bottom-left-radius: 20px;
+            }
+    
+            #pahami-table-mobile-3 tr td:nth-child(2){
+                background-color: rgba(229, 76, 110, 0.1);
+                padding: 32px 38px;
+            }
+    
+            #pahami-table-mobile-3 tr td{
+                padding: 32px 38px;
+            }
+    
+            #pahami-table-mobile-3 .title{
+                font-family: 'Nunito', sans-serif;
+                text-align: center;
+                font-size: 1em;
+                color: #1D3962;
+                padding-bottom: 10px;
+            }
+
+            @media screen and (max-width: 330px){
+                /* Style tab links */
+                .tablink:nth-child(1) {
+                    font-size: 0.5em;
+                    width: 80px;
+                }
+        
+                .tablink:nth-child(2), .tablink:nth-child(3) {
+                    font-size: 0.5em;
+                    width: 80px;
+                }
+            }
+    
+        </style>
+    
+        <div style="padding-top: 30px;">
+            <div class="card">
+                <button class="tablink" onclick="openPage('pahami-table-mobile-1', this, '#3b73c5')" id="defaultOpen">
+                    <span class="tab-title">Premium + UTBK</span>
+                </button>
+                <button class="tablink" onclick="openPage('pahami-table-mobile-2', this, '#3b73c5')">
+                    <span class="tab-title">Premium</span>
+                </button>
+                <button class="tablink" onclick="openPage('pahami-table-mobile-3', this, '#3b73c5')">
+                    <span class="tab-title">Free</span>
+                </button>
+            </div>
+        </div>
+    
+        <div id="pahami-table-mobile-1" class="tabcontent">
+            <div style="overflow-x: auto;">
+                <p class="title">Premium + UTBK</p>
+                <table>
+                    <tr class="first">
+                        <td>Masa Langganan</td>
+                        <td class="border-data-up">1,5 Tahun / 6 Bulan</td>
+                    </tr>
+                    <tr>
+                        <td>Akses Video, Quiz, Rangkuman, Flashcard</td>
+                        <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    </tr>
+                    <tr>
+                        <td>Bank Soal PAS, UN, UTBK, Ujian Mandiri</td>
+                        <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    </tr>
+                    <tr>
+                        <td>Video Bisa Download</td>
+                        <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    </tr>
+                    <tr>
+                        <td>Video Player <br />(Atur Kecepatan & Resolusi)</td>
+                        <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    </tr>
+                    <tr>
+                        <td>Diskusi dengan Guru</td>
+                        <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    </tr>
+                    <tr>
+                        <td>Diamond <br />(Untuk Tryout dan Konseling Online)</td>
+                        <td class="border-data-down">60</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    
+        <div id="pahami-table-mobile-2" class="tabcontent">
+            <div style="overflow-x: auto;">
+                <p class="title">Premium</p>
+                <table>
+                    <tr class="first">
+                        <td>Masa Langganan</td>
+                        <td class="border-data-up">6 Bulan / 3 Bulan / 1 Bulan</td>
+                    </tr>
+                    <tr>
+                        <td>Akses Video, Quiz, Rangkuman, Flashcard</td>
+                        <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    </tr>
+                    <tr>
+                        <td>Bank Soal PAS, UN, UTBK, Ujian Mandiri</td>
+                        <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    </tr>
+                    <tr>
+                        <td>Video Bisa Download</td>
+                        <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    </tr>
+                    <tr>
+                        <td>Video Player <br />(Atur Kecepatan & Resolusi)</td>
+                        <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    </tr>
+                    <tr>
+                        <td>Diskusi dengan Guru</td>
+                        <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    </tr>
+                    <tr>
+                        <td>Diamond <br /> (Untuk Tryout dan Konseling Online)</td>
+                        <td class="border-data-down">5</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    
+        <div id="pahami-table-mobile-3" class="tabcontent">
+            <div style="overflow-x: auto;">
+                <p class="title">Free</p>
+                <table>
+                    <tr class="first">
+                        <td>Masa Langganan</td>
+                        <td class="border-data-up">-</td>
+                    </tr>
+                    <tr>
+                        <td>Akses Video, Quiz, Rangkuman, Flashcard</td>
+                        <td>Terbatas</td>
+                    </tr>
+                    <tr>
+                        <td>Bank Soal PAS, UN, UTBK, Ujian Mandiri</td>
+                        <td>Terbatas</td>
+                    </tr>
+                    <tr>
+                        <td>Video Bisa Download</td>
+                        <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/marklist.svg" alt="pahamify-check"></td>
+                    </tr>
+                    <tr>
+                        <td>Video Player <br />(Atur Kecepatan & Resolusi)</td>
+                        <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/marklist.svg" alt="pahamify-check"></td>
+                    </tr>
+                    <tr>
+                        <td>Diskusi dengan Guru</td>
+                        <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/marklist.svg" alt="pahamify-check"></td>
+                    </tr>
+                    <tr>
+                        <td>Diamond <br /> (Untuk Tryout dan Konseling Online)</td>
+                        <td class="border-data-down">-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    
+        <!-- Script -->
+    
+        <script>
+            function openPage(pageName,elmnt,color) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablink");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].style.backgroundColor = "";
+                    tablinks[i].style.color = "#7E94B3";
+                }
+                document.getElementById(pageName).style.display = "block";
+                    elmnt.style.backgroundColor = color;
+                    elmnt.style.color = "#ffffff";
+            }
+    
+            // Get the element with id="defaultOpen" and click on it
+            document.getElementById("defaultOpen").click();
+        </script>
+    </div>
+
+    <div>
+        <style scoped>
+        #pahami-home-table table {
+            font-family: "Nunito", sans-serif;
+            font-size: 1em;
+            color: #1d3962;
+            margin: 0% auto;
+            border-collapse: collapse;
+            border-spacing: 10px 0px;
+            width: 100%;
+            max-width: 1200px;
+            border: none;
+            border-top: none;
+        }
+
+        #pahami-home-table .table-icon-img-size{
+                width: 15px;
+                height: 15px;
+        }
+
+        #pahami-home-table tr{
+            border-top: solid 3px rgba(58, 115, 197, 0.1) !important;
+            border-top-radius: 10px;
+        }
+
+        #pahami-home-table th{
+            font-size: 0.9em;
+            color: #1d3962;
+        }
+        
+        #pahami-home-table tr:nth-child(1){
+            border-top: none !important;
+        }
+
+        #pahami-home-table tr:nth-last-child(1){
+            border-bottom: none !important;
+        }
+
+
+        #pahami-home-table td{
+            width: 25%;
+        }
+
+        #pahami-home-table .first{
+            border-top: solid 3px rgba(58, 115, 197, 0.2) !important;
+            border-top-radius: 10px;
+        }
+
+        #pahami-home-table td{
+            margin: 0% 300px;
+        }
+
+        #pahami-home-table tr td:nth-child(1){
+            border-top: solid 3px rgba(58, 115, 197, 0.2) !important;
+            padding: 32px 38px;
+            text-align: center;
+        }
+
+        #pahami-home-table tr th:nth-child(2){
+            text-align: center;
+            font-weight: bold;
+            background-color: rgba(46, 207, 47, 0.1);
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border-left: solid 3px #ffffff !important;
+            border-right: solid 3px #ffffff !important;
+            padding: 32px 38px;
+        }
+
+        #pahami-home-table tr td:nth-child(2){
+            border-top: solid 3px rgba(58, 115, 197, 0.2) !important;
+            border-left: solid 3px #ffffff !important;
+            border-right: solid 3px #ffffff !important;
+            background-color: rgba(46, 207, 47, 0.1);
+            padding: 32px 38px;
+            text-align: center;
+        }
+
+        #pahami-home-table tr th:nth-child(3){
+            text-align: center;
+            font-weight: bold;
+            background-color: rgba(219, 206, 44, 0.1);
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            padding: 32px 38px;
+        }
+
+        #pahami-home-table tr td:nth-child(3){
+            border-top: solid 3px rgba(58, 115, 197, 0.2) !important;
+            background-color: rgba(219, 206, 44, 0.1);
+            padding: 32px 38px;
+            text-align: center;
+        }
+
+        #pahami-home-table tr th:nth-child(4){
+            text-align: center;
+            font-weight: bold;
+            background-color: rgba(229, 76, 110, 0.1);
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            padding: 32px 38px;
+        }
+
+        #pahami-home-table tr td:nth-child(4){
+            border-top: solid 3px rgba(58, 115, 197, 0.2) !important;
+            text-align: center;
+            color: #E54C6E;
+            background-color: rgba(229, 76, 110, 0.1);
+            padding: 32px 38px;
+            margin: 0% 500px;
+        }
+
+        #pahami-home-table .test{
+            padding-right: 20px;
+        }
+
+        #pahami-home-table tr td{
+            padding: 32px 38px;
+        }
+        </style>
+        <!--main division-->
+
+        <div id="pahami-home-table">
+            <div style="overflow-x:auto;">
+                <table>
+                <tr>
+                    <th></th>
+                    <th>Premium + UTBK</th>
+                    <th>Premium</th>
+                    <th>Free</th>
+                </tr>
+            
+                <tr class="first">
+                    <td>Masa Langganan</td>
+                    <td>1,5 Tahun / 6 Bulan</td>
+                    <td>6 Bulan / 3 Bulan / 1 Bulan</td>
+                    <td>-</td>
+                </tr>
+                
+                <tr>
+                    <td>Akses Video, Quiz, Rangkuman, Flashcard</td>
+                    <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    <td>Terbatas</td>
+                </tr>
+                
+                <tr>
+                    <td>Bank Soal PAS, UN, UTBK, Ujian Mandiri</td>
+                    <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    <td>Terbatas</td>
+                </tr>
+                
+                <tr>
+                    <td>Video Bisa Download</td>
+                    <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/marklist.svg" alt="pahamify-check"></td>
+                </tr>
+                
+                <tr>
+                    <td>Video Player <br />(Atur Kecepatan & Resolusi)</td>
+                    <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/marklist.svg" alt="pahamify-check"></td>
+                </tr>
+                
+                <tr>
+                    <td>Diskusi dengan Guru</td>
+                    <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/Checklist.svg" alt="pahamify-check"></td>
+                    <td><img class="table-icon-img-size" src="https://pahamify.com/wp-content/uploads/2020/01/marklist.svg" alt="pahamify-check"></td>
+                </tr>
+                
+                <tr>
+                    <td>Diamond <br /> (Untuk Tryout dan Konseling Online)</td>
+                    <td>60</td>
+                    <td>5</td>
+                    <td>-</td>
+                </tr>
+            
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html> 
